@@ -7,4 +7,5 @@ kleuren = ["Rood", "Geel", "Groen", "Blauw", "Zwart", "Oranje"]
 random.shuffle(kleuren)
 passcode = kleuren[:4]
 
-print(passcode)
+input("\tvoer hier je code in:")
+
