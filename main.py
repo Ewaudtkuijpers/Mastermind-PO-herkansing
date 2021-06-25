@@ -16,6 +16,10 @@ def mastermind(beurtenover):
   invoer = input("\nvoer hier je code in:").upper()
   if not invoer.isalpha():
     print("invoer fout probeer opnieuw")
+  elif len(invoer) > 4:
+    print("invoer fout probeer opnieuw")
+  elif len(invoer) < 4: 
+    print("invoer fout probeer opnieuw")
     
 
   #Code vergelijken met invoer en hints geven
