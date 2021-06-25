@@ -9,7 +9,7 @@ kleuren = ["R", "G", "B", "Z", "O"]
 random.shuffle(kleuren)
 passcode = kleuren[:4]
 print(passcode)
-def mastermind():
+def mastermind(beurtenover):
   hints = []
 
   #invoer
@@ -33,11 +33,16 @@ def mastermind():
   if invoer == "".join(passcode):
     print("je hebt gewonnen")
   else:
-    mastermind()
+    beurtenover -= 1
+    if beurtenover == 0:
+      print("je hebt verloren")
+      return
+    mastermind(beurtenover)
+    
 
-mastermind()
+mastermind(10)
+
 
 # nog een keer spelen
-# beurten
 # input validatie
 # eisen van de opdracht
