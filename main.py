@@ -5,6 +5,7 @@ print("hallo je gaat nu mastermind spelen")
 
 
 kleuren = ["R", "G", "B", "Z", "O"]
+hints = []
 
 random.shuffle(kleuren)
 passcode = kleuren[:4]
@@ -16,15 +17,8 @@ def mastermind():
     letterInvoer = invoer[i]
     print("letter " + letterCode + " vergelijken met " +letterInvoer);
     if letterCode == letterInvoer:
-      print("letter op goede plek")
+      hints.append("z")
     elif letterInvoer in passcode:
-      print("letter op de verkeerde plek")
-    else:
-      print("letter zit er niet in")
-    # if letter in passcode:
-    #   print(letter + " zit erin")
-    # else:
-    #   print(letter + " zit er niet in")
-  
-
+      hints.append("w")
+  print(hints)
 mastermind()
