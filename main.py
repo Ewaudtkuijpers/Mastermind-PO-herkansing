@@ -1,32 +1,33 @@
 import random
-import os
 
 print("hallo je gaat nu mastermind spelen")
-
+print("Je kan kiezen uit de kleuren Rood, Groen, Blauw, Zwart en Oranje")
+print("Je moet een code invullen op deze manier: rgbz")
 
 kleuren = ["R", "G", "B", "Z", "O"]
 
 random.shuffle(kleuren)
 passcode = kleuren[:4]
-print(passcode)
 def mastermind(beurtenover):
   hints = []
 
   #invoer
   invoer = input("\nvoer hier je code in:").upper()
-  if not invoer.isalpha():
+  for letter in invoer:
+    if not letter in kleuren:
+      print("invoer fout probeer opnieuw")
+      mastermind(beurtenover)
+      return
+  if not invoer.isalpha() or len(invoer) != 4:
     print("invoer fout probeer opnieuw")
-  elif len(invoer) > 4:
-    print("invoer fout probeer opnieuw")
-  elif len(invoer) < 4: 
-    print("invoer fout probeer opnieuw")
-    
+    mastermind(beurtenover)
+    return
 
   #Code vergelijken met invoer en hints geven
   for i in range(4):
     letterCode = passcode[i]
     letterInvoer = invoer[i]
-    print("letter " + letterCode + " vergelijken met " +letterInvoer);
+    # print("letter " + letterCode + " vergelijken met " +letterInvoer);
     if letterCode == letterInvoer:
       hints.append("z")
     elif letterInvoer in passcode:
