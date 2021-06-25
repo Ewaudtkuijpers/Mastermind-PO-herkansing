@@ -5,12 +5,12 @@ print("hallo je gaat nu mastermind spelen")
 
 
 kleuren = ["R", "G", "B", "Z", "O"]
-hints = []
 
 random.shuffle(kleuren)
 passcode = kleuren[:4]
 print(passcode)
 def mastermind():
+  hints = []
   invoer = input("\nvoer hier je code in:")
   for i in range(4):
     letterCode = passcode[i]
@@ -21,4 +21,14 @@ def mastermind():
     elif letterInvoer in passcode:
       hints.append("w")
   print(hints)
+  if invoer == "".join(passcode):
+    print("je hebt gewonnen")
+  else:
+    mastermind()
+
 mastermind()
+
+# nog een keer spelen
+# beurten
+# input validatie
+# eisen van de opdracht
