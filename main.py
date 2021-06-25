@@ -11,7 +11,7 @@ passcode = kleuren[:4]
 print(passcode)
 def mastermind():
   hints = []
-  invoer = input("\nvoer hier je code in:")
+  invoer = input("\nvoer hier je code in:").upper()
   for i in range(4):
     letterCode = passcode[i]
     letterInvoer = invoer[i]
