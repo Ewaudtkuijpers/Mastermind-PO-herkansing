@@ -4,14 +4,18 @@ import os
 print("hallo je gaat nu mastermind spelen")
 
 
-kleuren = ["Rood", "Geel", "Groen", "Blauw", "Zwart", "Oranje"]
+kleuren = ["R", "G", "B", "Z", "O"]
 
 random.shuffle(kleuren)
 passcode = kleuren[:4]
-
+print(passcode)
 def mastermind():
   invoer = input("\nvoer hier je code in:")
-  if invoer in passcode:
-    print("Wit")
+  for letter in invoer:
+    if letter in passcode:
+      print(letter + " zit erin")
+    else:
+      print(letter + " zit er niet in")
+  
 
 mastermind()
