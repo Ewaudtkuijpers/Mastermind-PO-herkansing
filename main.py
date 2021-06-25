@@ -19,15 +19,15 @@ def mastermind():
     
 
   #Code vergelijken met invoer en hints geven
-    for i in range(4):
-      letterCode = passcode[i]
-      letterInvoer = invoer[i]
-      print("letter " + letterCode + " vergelijken met " +letterInvoer);
-      if letterCode == letterInvoer:
-        hints.append("z")
-      elif letterInvoer in passcode:
-        hints.append("w")
-    print(hints)
+  for i in range(4):
+    letterCode = passcode[i]
+    letterInvoer = invoer[i]
+    print("letter " + letterCode + " vergelijken met " +letterInvoer);
+    if letterCode == letterInvoer:
+      hints.append("z")
+    elif letterInvoer in passcode:
+      hints.append("w")
+  print(hints)
   
   # checken of je wint
   if invoer == "".join(passcode):
